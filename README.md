@@ -1,9 +1,4 @@
 # Internship at AeroAspire!
-
-**Name:** Navya Narayan Panicker  
-**Position:** SDE Intern at AeroAspire  
-**Internship Tenure:** 3 Months  
-
 ---
 
 ##  Overview
@@ -12,6 +7,13 @@ It includes my **weekly reports**, **project contributions**, **learnings**, and
 The aim of this repository is to showcase my growth, technical skills, and the practical knowledge I gained throughout the internship.
 
 ---
+
+#Personal details
+---
+**Name:** Navya Narayan Panicker  
+**Position:** SDE Intern at AeroAspire  
+**Internship Tenure:** 3 Months  
+
 
 ##  Contents
 

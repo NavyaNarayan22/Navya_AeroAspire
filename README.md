@@ -8,7 +8,7 @@ The aim of this repository is to showcase my growth, technical skills, and the p
 
 ---
 
-#Personal details
+# Personal details
 ---
 **Name:** Navya Narayan Panicker  
 **Position:** SDE Intern at AeroAspire  

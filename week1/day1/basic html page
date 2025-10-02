@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Basic HTML Page</title>
+  <style>
+    body { margin: 0; font-family: Arial; background: #bebebe; }
+
+    nav {
+      float: left;
+      width: 30%;
+      height: 300px;
+      background: #bebebe;
+      padding: 20px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    header, nav, footer {
+      background: #ececec;
+      text-align: center;
+      padding: 3em;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2em;
+      padding: 2em;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section {
+      background: #f8f8f8;
+      border: 3px solid #ccc;
+      border-radius: 8px;
+      padding: 1em;
+      min-width: 100px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    img {
+      justify-self: center;
+      align-self: center;
+      width: 800px;
+      height: 800px;
+    }
+
+    footer {
+      background-color: #777;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>INTRODUCTION</h1>
+  </header>
+  <main>
+    <section id="about">
+      <h2>ABOUT</h2>
+      <p>My name is Navya. <br /> I am studying in AMC <br /> I am in 7th semester, computer science and engineering department.</p>
+    </section>
+    <section id="photo">
+      <h2>PHOTOS</h2>
+      <a href="https://aeroaspire.in/">
+        <img src="C:\Users\hp\OneDrive\Pictures\Screenshots\Screenshot (79).png" alt="website" style="width: 50px; height:50px;" />
+      </a>
+    </section>
+    <section id="contact">
+      <h2>CONTACT</h2>
+      <p>Contact no: 1234567890</p>
+      <p><a href="mailto:navyanarayanp393@gmail.com">Email</a></p>
+    </section>
+  </main>
+  <footer>
+    <p>Navya Narayan</p>
+    &copy; 2025 Navya's Website
+  </footer>
+</body>
+</html>

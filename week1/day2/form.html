@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAMPLE FORM</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 30px;
+        background-image: url('image.jpg');
+        background-size: cover;     
+        background-position: center; 
+}
+
+    h1#greeting {
+        text-align: center;
+        color: #032041;
+        margin-bottom: 20px;
+}
+    .hidden {
+        display: none;
+    }
+
+
+    form {
+      margin-top: 20px;
+      padding: 20px;
+      background: #e0d4dc;
+      border: 2px solid #0e090f;
+      border-radius: 5px;
+    }
+    label { display: block; margin-bottom: 10px; }
+    input { padding: 5px; margin-left: 20px; }
+    .output {
+    text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+      background: #f5f3f5;
+      border-radius: 8px;
+    }
+    #hideableSection {
+      margin: 15px 0;
+      padding: 15px;
+      background: #f4e7f5;
+      border-radius: 10px;
+    }
+    .error { color: red; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1 id="greeting"></h1>
+
+  <button id="hideButton">Hide Section</button>
+  <div id="hideableSection">
+    <p>This is a sample form that will show the user's information</p>
+  </div>
+
+  <h2>Personal Details</h2>
+  <form id="form">
+    <label>
+      Name:
+      <input type="text" id="name" user="Enter your Name" required>
+    </label>
+    <label>
+      Phone No.:
+      <input type="tel" id="phone" user="Enter your Phone No.">
+    </label>
+    <label>
+      Email:
+      <input type="email" id="email" user="Enter your Email" required>
+    </label>
+    <button type="submit">Click to Submit</button>
+    <div id="errorMsg" class="error"></div>
+  </form>
+
+  <div class="output" id="output"></div>
+
+  <script>
+    function greetingMessage() {
+      const hour = new Date().getHours();
+      const greeting1 = document.getElementById("greeting");
+      if (hour < 12) {
+        greeting1.textContent = "Good Morning";
+      } else if (hour < 18) {
+        greeting1.textContent = "Good Afternoon";
+      } else {
+        greeting1.textContent = "Good Evening";
+      }
+    }
+    greetingMessage();
+
+    const hideButton = document.getElementById("hideButton");
+    const hideableSection = document.getElementById("hideableSection");
+    hideButton.addEventListener("click", () => {
+      hideableSection.classList.toggle("hidden");
+      hideButton.textContent = hideableSection.classList.contains("hidden")
+        ? "Show Section"
+        : "Hide Section";
+    });
+
+    const form = document.getElementById("form");
+    const output = document.getElementById("output");
+    const errorMsg = document.getElementById("errorMsg");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+
+      if (name === "" || email === "" || phone === "") {
+        errorMsg.textContent = "All fields are required!";
+        return;
+      }
+
+      errorMsg.textContent = "";
+      output.innerHTML = `<strong>personal details</strong><br>
+                          Name: ${name}<br>
+                          Email: ${email}<br>
+                          Phone No.: ${phone}`;
+    });
+  </script>
+</body>
+</html>

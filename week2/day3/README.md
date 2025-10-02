@@ -33,16 +33,6 @@ A modern Task Manager app built with React, Vite, and Material UI (MUI). This pr
 - **Task Management**: Add, display, and (optionally) remove tasks.
 - **Responsive Design**: Clean, modern look on all devices.
 
-***
-
-## Screenshots
-
-- **Homepage with AppBar and Typography**
-- **Task List rendered from props**
-- **Add Task form with validation and error display**
-
-*(Add your screenshots here, e.g. `![screenshot](./screenshots/homepage Started
-
 ### 1. Scaffold the App with Vite
 
 ```sh

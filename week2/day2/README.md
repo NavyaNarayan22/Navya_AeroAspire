@@ -95,3 +95,6 @@ export default App;
 npm run dev
 ```
 Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+<img width="1920" height="1080" alt="Screenshot (206)" src="https://github.com/user-attachments/assets/799eedf9-4f96-433b-8ca0-70bfad99dc4b" />
+

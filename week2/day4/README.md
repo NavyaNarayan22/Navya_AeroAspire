@@ -34,7 +34,11 @@ A modern Task Manager web app built with React, Vite, Material UI, and React Rou
 ***
 
 ## Screenshots
-<img width="1920" height="1080" alt="Screenshot (237)" src="https://github.com/user-attachments/assets/90545f9d-4260-46fd-9ce0-9ff606436738" />
+<img width="1920" height="1080" alt="Screenshot (237)" src="https://github.com/user-attachments/assets/90545f9d-4260-46fd-9ce0-9ff606436738" /> 
+<img width="1920" height="1080" alt="Screenshot (234)" src="https://github.com/user-attachments/assets/b72f5988-26fd-4b46-9b0a-5e7825ed0b5a" />
+<img width="1920" height="1080" alt="Screenshot (236)" src="https://github.com/user-attachments/assets/81499782-22bc-4ba3-8d45-963c12b6c04d" />
+
+
 
 
 ### 1. Scaffold with Vite + React
@@ -190,5 +194,3 @@ Go to [http://localhost:5173](http://localhost:5173) to use the app.
 - User authentication and multi-user support
 - Backend API for data persistence (optional)
 - More MUI icon usage, tooltips, and animations
-
-rDw8y17XxsRL7%2Brx8N%2FuBpizzt%2BPAs36NDot7oSyrKRFOLDr%2BAR%2BlLZSSnWxAoH2C4Ug3IOuPXscRca8m%2F1uO3Meo8u3WiIQSR%2FYQdsC12gSzhjGMdw%3D%3D&Expires=1759425253)

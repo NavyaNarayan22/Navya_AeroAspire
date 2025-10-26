@@ -1,0 +1,46 @@
+openapi: 3.0.3
+info:
+  title: My API
+  version: "1.0.0"
+  description: Versioned API v1 example with Swagger
+servers:
+  - url: http://localhost:5000/api/v1
+paths:
+  /test:
+    get:
+      summary: Test endpoint
+      description: Returns a simple message
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: API v1 is working!
+  /echo:
+    post:
+      summary: Echo endpoint
+      description: Returns whatever JSON is sent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  you_sent:
+                    type: object
+                    example:
+                      name: Navya
+                      age: 21

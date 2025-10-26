@@ -1,0 +1,48 @@
+services:
+  mysql-db:
+    image: mysql:8
+    container_name: mysql-db
+    restart: always
+    env_file: .env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  flask-backend:
+    build:
+      context: ./backend
+    container_name: flask-backend
+    env_file: .env
+    environment:
+      FLASK_RUN_HOST: 0.0.0.0
+      FLASK_RUN_PORT: ${BACKEND_PORT}
+      FLASK_DEBUG: ${FLASK_DEBUG}
+      MYSQL_HOST: mysql-db
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    depends_on:
+      - mysql-db
+    ports:
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
+
+  react-frontend:
+    build:
+      context: ./frontend
+    container_name: react-frontend
+    env_file: .env
+    environment:
+      PORT: ${FRONTEND_PORT}
+    depends_on:
+      - flask-backend
+    ports:
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
+
+volumes:
+  db_data:

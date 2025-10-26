@@ -1,39 +1,60 @@
-Database Integration in Flask: ORM vs Direct SQL
-This project demonstrates how to connect a Flask web application to an SQL database (SQLite or MySQL) and perform CRUD (Create, Read, Update, Delete) operations using two approaches: direct/raw SQL and ORM (SQLAlchemy).
+# Flask Database Integration: ORM vs Direct SQL
 
-Overview
-Database integration in Flask means configuring your application to communicate with a database, enabling persistent storage and retrieval of data. The two most common approaches are:
+## Overview
 
-Direct SQL (Raw Queries): Use SQL statements directly for all database interactions. This approach is closer to the database "metal" and often preferred for simple or performance-critical tasks.
+This project demonstrates Flask integration with SQL databases using two strategies: direct SQL (raw queries) and ORM (SQLAlchemy). It supports SQLite (file-based) and MySQL (server-based), and covers CRUD (Create, Read, Update, Delete) operations.
 
-ORM (Object Relational Mapper): Use an abstraction layer (like SQLAlchemy) to interact with the database using Python classes and methods instead of raw SQL. ORM streamlines database code, reduces boilerplate, and makes migrations and portability easier.​
+## Database Approaches
 
-Connecting Flask to SQLite or MySQL
-With SQLite, integration is straightforward, as Python’s standard library includes the sqlite3 module. Flask applications can connect to .db files easily with minimal configuration. Typically, a database file is either created on startup or initialized using a management command.​
+### Direct SQL (Raw Queries)
 
-With MySQL or other databases, you provide connection parameters (host, user, password, database) to a Python connector (such as pymysql). With SQLAlchemy, you configure the database URI for seamless switching between SQLite, MySQL, or PostgreSQL.​
+- Use plain SQL statements in your Flask code for all database interactions.
+- Gives maximum control and can yield better performance for simple queries.
+- Suitable for small scripts, legacy systems, or when detailed query optimization is needed.
+- The developer is responsible for managing transactions, security, and escaping values.
 
-CRUD Operations
-Create: Insert new records into the database.
+### ORM (SQLAlchemy)
 
-Read: Retrieve existing records or lists from the database.
+- Enables database interactions with Python classes and methods.
+- Abstracts away raw SQL and simplifies handling relationships and schema migrations.
+- Makes your app more portable, maintainable, and secure by preventing SQL injection.
+- Especially recommended for complex projects and rapid prototyping.
 
-Update: Modify attributes of existing records.
+## Supported Databases
 
-Delete: Remove records from the database.
+- **SQLite:** Embedded, file-based, suitable for development and smaller projects.
+- **MySQL:** Popular server database, used for scalable, production workloads.
 
-Each operation is mapped to HTTP verbs (POST, GET, PUT, DELETE) and exposed through Flask endpoint routes, forming a typical REST API.
+## CRUD Operations
 
-ORM (SQLAlchemy) vs Direct SQL (Raw Queries)
-Aspect	ORM (SQLAlchemy)	Direct SQL (Raw Queries)
-Abstraction	High (Python classes, automatic SQL generation)	Low (manual SQL statements)
-Ease of Use	Easier for complex apps, reduces boilerplate	Simpler for small scripts, more control
-Maintainability	Better for large, evolving projects	Can get messy with complex queries
-Portability	Switch between databases with minor changes	Significant rewrite for new databases
-Performance	Slight overhead due to abstraction	Often faster for simple operations
-Security	Handles escaping and SQL injection prevention	Requires manual handling, more error-prone
-Control	High-level, but possible to drop down to SQL	Full manual control over queries
-When to Use Which Approach
-ORM is ideal for rapid development, apps requiring maintenance, or those targeting portability between different database systems.
+The application implements full CRUD functionality:
 
-Raw SQL excels in simple applications, when ultimate control or raw performance is required, or when leveraging complex native SQL features.
+- **Create:** Insert new records
+- **Read:** Query individual records or all records
+- **Update:** Edit existing records
+- **Delete:** Remove records
+
+All operations are exposed as RESTful API endpoints in Flask.
+
+## ORM vs Direct SQL: Comparison
+
+| Aspect          | ORM (SQLAlchemy)                        | Direct SQL (Raw Queries)      |
+|-----------------|-----------------------------------------|------------------------------|
+| Abstraction     | Python classes (models)                 | Manual SQL statements        |
+| Portability     | High (easy DB swaps)                    | Low (DB-specific SQL needed) |
+| Maintainability | Good for growing or complex codebases   | Harder for large projects    |
+| Control         | High-level, but can use raw SQL if needed | Full control of queries      |
+| Security        | Auto-escapes, reduces SQL injection risk | Must ensure proper handling  |
+| Performance     | Slight abstraction overhead             | Efficient for simple cases   |
+
+## When to Use
+
+- **ORM:** For most applications, when clear structure, maintainability, and cross-database support are priorities.
+- **Direct SQL:** For optimized performance, simple scripts, or when complex, database-specific features are required.
+
+## References
+
+- Flask documentation: [Database Integration][web:22][web:26]
+- Flask-SQLAlchemy docs: [Flask-SQLAlchemy][web:28]
+- ORM vs raw SQL in Flask: [Read more][web:12]
+
